@@ -1,0 +1,110 @@
+import { MapPin, Clock, Phone, ExternalLink, Navigation } from 'lucide-react';
+
+export default function Location() {
+  const mapLink = 'https://maps.app.goo.gl/JC8FtAcz8pGqFZzN6';
+
+  return (
+    <section id="lokasi" className="py-20 bg-slate-900 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-xs uppercase tracking-widest text-brand-500 font-bold mb-2">
+            Lokasi Toko
+          </h2>
+          <p className="text-2xl sm:text-4xl font-extrabold text-white">
+            Kunjungi Cahaya Baru Aki 2
+          </p>
+          <p className="text-slate-400 text-sm mt-3">
+            Dapatkan aki berkualitas dan layanan pemasangan langsung di toko kami di Cianjur.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Info Details Box */}
+          <div className="lg:col-span-5 bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+            
+            {/* Address */}
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center shrink-0">
+                <MapPin className="w-6 h-6 text-brand-400" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+                  Alamat Lengkap
+                </h3>
+                <p className="text-white font-bold text-base mt-1 leading-snug">
+                  Jln Arwinda No.49, Tajurhalang, Kec. Cianjur, Kabupaten Cianjur, Jawa Barat 43281
+                </p>
+              </div>
+            </div>
+
+            {/* Operational Hours */}
+            <div className="flex items-start gap-4 pt-4 border-t border-slate-900">
+              <div className="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center shrink-0">
+                <Clock className="w-6 h-6 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+                  Jam Operasional
+                </h3>
+                <p className="text-emerald-400 font-extrabold text-lg mt-0.5">
+                  24 Jam / 7 Hari Nonstop
+                </p>
+                <p className="text-xs text-slate-400">Siap melayani kebutuhan aki kapan saja.</p>
+              </div>
+            </div>
+
+            {/* Phone & WhatsApp */}
+            <div className="flex items-start gap-4 pt-4 border-t border-slate-900">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                <Phone className="w-6 h-6 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+                  Kontak Telepon / WA
+                </h3>
+                <p className="text-white font-bold text-lg mt-0.5">
+                  0818-0983-3193
+                </p>
+                <p className="text-xs text-slate-400">Hubungi langsung via telepon atau WhatsApp.</p>
+              </div>
+            </div>
+
+            {/* Google Maps Button CTA */}
+            <div className="pt-4">
+              <a
+                href={mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all hover:scale-[1.02]"
+              >
+                <Navigation className="w-5 h-5" />
+                <span>Buka di Google Maps</span>
+                <ExternalLink className="w-4 h-4 ml-1 opacity-70" />
+              </a>
+            </div>
+
+          </div>
+
+          {/* Embedded Google Maps */}
+          <div className="lg:col-span-7 bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl min-h-[380px] relative">
+            <iframe
+              title="Peta Lokasi Cahaya Baru Aki 2 Cianjur"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.536762391069!2d107.13500000000002!3d-6.8260000000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e685324b179df3f%3A0x6b4f74d0e653bc0!2sJl.%20Arwinda%20No.49%2C%20Tajurhalang%2C%20Kec.%20Cianjur%2C%20Kabupaten%20Cianjur%2C%20Jawa%20Barat%2043281!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '380px' }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full min-h-[380px] rounded-3xl"
+            />
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}

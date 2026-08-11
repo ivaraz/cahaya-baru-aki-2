@@ -12,10 +12,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   const waUrl = generateWhatsAppLink(waMessage);
 
   return (
-    <div className="bg-slate-900 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg">
+    <div className="bg-white rounded-2xl border border-slate-200 hover:border-brand-600/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-md hover:shadow-lg">
       <div>
         {/* Product Image & Badges */}
-        <div className="relative w-full h-48 bg-slate-950 flex items-center justify-center p-4 overflow-hidden border-b border-slate-800">
+        <div className="relative w-full h-48 bg-slate-50 flex items-center justify-center p-4 overflow-hidden border-b border-slate-200">
           <Image
             src={product.image}
             alt={`${product.name} - Toko Aki Cianjur`}
@@ -25,15 +25,15 @@ export default function ProductCard({ product }: ProductCardProps) {
           />
 
           {/* Category Pill */}
-          <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+          <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-1.5 shadow-sm">
             {product.category === 'mobil' ? (
               <>
-                <Car className="w-3.5 h-3.5 text-brand-400" />
+                <Car className="w-3.5 h-3.5 text-brand-600" />
                 <span>Aki Mobil</span>
               </>
             ) : (
               <>
-                <Bike className="w-3.5 h-3.5 text-amber-400" />
+                <Bike className="w-3.5 h-3.5 text-amber-600" />
                 <span>Aki Motor</span>
               </>
             )}
@@ -49,24 +49,24 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Content Details */}
         <div className="p-5 space-y-3">
-          <h3 className="text-lg font-bold text-white group-hover:text-brand-400 transition-colors leading-snug">
+          <h3 className="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
             {product.name}
           </h3>
 
-          <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 bg-amber-950/40 px-2.5 py-1 rounded border border-amber-900/40 w-fit">
+          <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 bg-amber-50 px-2.5 py-1 rounded border border-amber-200/50 w-fit">
             <span>Kapasitas: {product.capacity}</span>
           </div>
 
-          <p className="text-slate-300 text-xs leading-relaxed">
+          <p className="text-slate-600 text-xs leading-relaxed">
             {product.description}
           </p>
 
-          <div className="pt-2 border-t border-slate-800 text-xs text-slate-400 space-y-1">
-            <div className="font-semibold text-slate-300 flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="pt-2 border-t border-slate-100 text-xs text-slate-500 space-y-1">
+            <div className="font-semibold text-slate-800 flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
               <span>Cocok untuk:</span>
             </div>
-            <p className="text-slate-400 italic pl-4 text-[11px]">{product.suitableFor}</p>
+            <p className="text-slate-500 italic pl-4 text-[11px]">{product.suitableFor}</p>
           </div>
         </div>
       </div>

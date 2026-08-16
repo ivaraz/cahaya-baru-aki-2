@@ -1,4 +1,4 @@
-const PHONE_NUMBER = '6281809833193';
+const PHONE_NUMBER = "6281809833193";
 
 /**
  * Generates a direct WhatsApp URL with a pre-filled message.
@@ -7,7 +7,7 @@ const PHONE_NUMBER = '6281809833193';
  */
 export function generateWhatsAppLink(message?: string): string {
   const baseUrl = `https://wa.me/${PHONE_NUMBER}`;
-  if (!message || message.trim() === '') {
+  if (!message || message.trim() === "") {
     return baseUrl;
   }
   return `${baseUrl}?text=${encodeURIComponent(message.trim())}`;
@@ -19,4 +19,8 @@ export function getProductInquiryMessage(productName: string): string {
 
 export function getDefaultInquiryMessage(): string {
   return `Halo Cahaya Baru Aki 2, saya ingin berkonsultasi mengenai aki mobil / motor.`;
+}
+
+export function getImportantMessage(): string {
+  return `Halo Cahaya Baru Aki 2, kendaraan saya mogok bisakah anda menuju ke lokasi saya?`;
 }

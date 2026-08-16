@@ -1,8 +1,8 @@
-import { MessageSquare, PhoneCall, Zap, Clock } from 'lucide-react';
-import { generateWhatsAppLink, getDefaultInquiryMessage } from '@/lib/whatsapp';
+import { MessageSquare, PhoneCall, Zap, Clock } from "lucide-react";
+import { generateWhatsAppLink, getImportantMessage } from "@/lib/whatsapp";
 
 export default function CTA() {
-  const waUrl = generateWhatsAppLink(getDefaultInquiryMessage());
+  const waUrl = generateWhatsAppLink(getImportantMessage());
 
   return (
     <section className="py-16 bg-gradient-to-r from-brand-50 via-slate-50 to-brand-50 border-y border-slate-200 relative overflow-hidden">
@@ -20,7 +20,9 @@ export default function CTA() {
         </h2>
 
         <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
-          Aki mobil atau motor Anda bermasalah, mogok, atau butuh ganti baru? Jangan ragu, tim <strong>Cahaya Baru Aki 2</strong> siap melayani Anda di wilayah Cianjur!
+          Aki mobil atau motor Anda bermasalah, mogok, atau butuh ganti baru?
+          Jangan ragu, tim <strong>Cahaya Baru Aki 2</strong> siap melayani Anda
+          di wilayah Cianjur & Sekitarnya
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">

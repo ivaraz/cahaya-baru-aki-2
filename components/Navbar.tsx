@@ -1,21 +1,28 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { BatteryCharging, Menu, X, Phone, MessageSquare, Clock } from 'lucide-react';
-import { generateWhatsAppLink, getDefaultInquiryMessage } from '@/lib/whatsapp';
+import { useState } from "react";
+import Link from "next/link";
+import {
+  BatteryCharging,
+  Menu,
+  X,
+  Phone,
+  MessageSquare,
+  Clock,
+} from "lucide-react";
+import { generateWhatsAppLink, getDefaultInquiryMessage } from "@/lib/whatsapp";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const waUrl = generateWhatsAppLink(getDefaultInquiryMessage());
 
   const navLinks = [
-    { name: 'Beranda', href: '#beranda' },
-    { name: 'Keunggulan', href: '#keunggulan' },
-    { name: 'Produk', href: '#produk' },
-    { name: 'Layanan', href: '#layanan' },
-    { name: 'Tentang', href: '#tentang' },
-    { name: 'Lokasi', href: '#lokasi' },
+    { name: "Beranda", href: "#beranda" },
+    { name: "Keunggulan", href: "#keunggulan" },
+    // { name: 'Produk', href: '#produk' },
+    { name: "Layanan", href: "#layanan" },
+    { name: "Tentang", href: "#tentang" },
+    { name: "Lokasi", href: "#lokasi" },
   ];
 
   return (
@@ -25,7 +32,10 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Buka 24 Jam Nonstop di Cianjur &mdash; Siap Antar & Pasang Aki Direct</span>
+            <span>
+              Buka 24 Jam Nonstop di Cianjur &mdash; Siap Antar & Pasang Aki
+              Direct
+            </span>
           </div>
           <div className="hidden md:flex items-center gap-4 text-white/90">
             <div className="flex items-center gap-1">
@@ -78,7 +88,11 @@ export default function Navbar() {
               className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>

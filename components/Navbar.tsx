@@ -18,10 +18,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Beranda", href: "#beranda" },
-    { name: "Keunggulan", href: "#keunggulan" },
+    // { name: "Keunggulan", href: "#keunggulan" },
     // { name: 'Produk', href: '#produk' },
     { name: "Layanan", href: "#layanan" },
-    { name: "Tentang", href: "#tentang" },
+    // { name: "Tentang", href: "#tentang" },
     { name: "Lokasi", href: "#lokasi" },
   ];
 

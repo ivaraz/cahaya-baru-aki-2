@@ -17,12 +17,12 @@ export default function Home() {
       <main className="flex-grow">
         <CTA />
         {/* <Hero /> */}
-        <Benefits />
-        {/* <Products /> */}
         <Services />
-        <About />
-        {/* <Testimonials /> */}
         <Location />
+        {/* <Benefits /> */}
+        {/* <Products /> */}
+        {/* <About /> */}
+        {/* <Testimonials /> */}
       </main>
       <Footer />
       {/* <FloatingWhatsApp /> */}

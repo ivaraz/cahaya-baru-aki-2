@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     google: "qHY6Ug54s_E7Oop579jSFjLwo5tEsQ1mla8mcEiWguM",
   },
   description:
-    "Toko aki mobil dan motor terpercaya di Cianjur. Melayani penjualan aki GS Astra, Yuasa, Amaron, Motobatt, dan jasa antar-pasang aki 24 jam nonstop di Jln Arwinda No.49 Tajurhalang Cianjur.",
+    "Toko aki mobil dan motor terpercaya di Cianjur. Melayani penjualan aki dan jasa antar-pasang aki 24 jam nonstop di Jln Arwinda No.49 Tajurhalang Cianjur.",
   keywords: [
     "toko aki terdekat",
     "toko aki Cianjur",
@@ -84,7 +84,6 @@ export default function RootLayout({
       "Toko aki mobil dan motor terpercaya di Cianjur. Melayani penjualan, pemeriksaan kelistrikan, dan antar pasang aki 24 jam nonstop.",
     url: baseUrl,
     telephone: "+6281809833193",
-    priceRange: "$$",
     image: `${baseUrl}/images/hero.png`,
     address: {
       "@type": "PostalAddress",
@@ -93,11 +92,6 @@ export default function RootLayout({
       addressRegion: "Jawa Barat",
       postalCode: "43281",
       addressCountry: "ID",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -6.826,
-      longitude: 107.135,
     },
     hasMap: "https://maps.app.goo.gl/JC8FtAcz8pGqFZzN6",
     openingHoursSpecification: [

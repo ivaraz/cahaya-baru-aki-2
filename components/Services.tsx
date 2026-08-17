@@ -1,79 +1,112 @@
-import { ShoppingBag, Wrench, MessageCircleQuestion } from 'lucide-react';
-import { generateWhatsAppLink } from '@/lib/whatsapp';
+import {
+  ShoppingBag,
+  Wrench,
+  MessageCircleQuestion,
+  ArrowRight,
+} from "lucide-react";
+import { generateWhatsAppLink } from "@/lib/whatsapp";
+
+const services = [
+  {
+    icon: ShoppingBag,
+    title: "Penjualan Aki Mobil & Motor",
+    description:
+      "Menyediakan berbagai pilihan aki mobil dan motor dari merek terpercaya dengan kondisi baru, original, dan bergaransi.",
+    waMessage:
+      "Halo Cahaya Baru Aki 2, saya ingin bertanya tentang ketersediaan aki mobil / motor.",
+  },
+  {
+    icon: Wrench,
+    title: "Pemasangan Aki",
+    description:
+      "Layanan bongkar pasang aki secara profesional dan aman untuk membantu kendaraan Anda kembali siap digunakan.",
+    waMessage:
+      "Halo Cahaya Baru Aki 2, saya ingin meminta bantuan pemasangan aki di Cianjur.",
+  },
+  {
+    icon: MessageCircleQuestion,
+    title: "Konsultasi Aki",
+    description:
+      "Bantu cek kebutuhan aki, kapasitas yang sesuai, serta kecocokan aki dengan mobil atau motor Anda sebelum membeli.",
+    waMessage:
+      "Halo Cahaya Baru Aki 2, saya ingin konsultasi mengenai aki kendaraan saya.",
+  },
+];
 
 export default function Services() {
-  const services = [
-    {
-      icon: ShoppingBag,
-      title: 'Penjualan Aki',
-      description: 'Menyediakan aki mobil dan motor berbagai tipe & ukuran dari merk-merk terpercaya dengan kondisi baru, original, dan bergaransi.',
-      waMessage: 'Halo Cahaya Baru Aki 2, saya ingin bertanya tentang penjualan aki mobil / motor.',
-    },
-    {
-      icon: Wrench,
-      title: 'Pemasangan Aki',
-      description: 'Layanan bongkar pasang aki secara profesional oleh teknisi berpengalaman. Bebas ribet dan aman untuk kelistrikan kendaraan Anda.',
-      waMessage: 'Halo Cahaya Baru Aki 2, saya ingin minta bantuan pemasangan aki di Cianjur.',
-    },
-    {
-      icon: MessageCircleQuestion,
-      title: 'Konsultasi Aki',
-      description: 'Konsultasikan gejala aki lemah, rekomendasi kapasitas amper aki yang tepat, serta kecocokan tipe aki sebelum membeli.',
-      waMessage: 'Halo Cahaya Baru Aki 2, saya ingin konsultasi mengenai kondisi aki kendaraan saya.',
-    },
-  ];
-
   return (
-    <section id="layanan" className="py-20 bg-slate-50 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-xs uppercase tracking-widest text-brand-600 font-bold mb-2">
+    <section
+      id="layanan"
+      aria-labelledby="services-heading"
+      className="border-t border-slate-200 bg-slate-50 py-20"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-brand-600">
             Layanan Kami
-          </h2>
-          <p className="text-2xl sm:text-4xl font-extrabold text-slate-900">
-            Solusi Lengkap Aki Kendaraan Anda
           </p>
-          <p className="text-slate-500 text-sm mt-3">
-            Cahaya Baru Aki 2 siap melayani kebutuhan aki mobil dan motor Anda secara profesional di kawasan Cianjur.
+
+          <h2
+            id="services-heading"
+            className="text-2xl font-extrabold text-slate-900 sm:text-4xl"
+          >
+            Solusi Aki Mobil & Motor di Cianjur
+          </h2>
+
+          <p className="mt-3 text-sm leading-relaxed text-slate-500 sm:text-base">
+            Cahaya Baru Aki 2 membantu kebutuhan aki kendaraan Anda, mulai dari
+            pembelian, pemasangan, hingga konsultasi.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => {
+        {/* Services */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+          {services.map((service) => {
             const Icon = service.icon;
             const waUrl = generateWhatsAppLink(service.waMessage);
 
             return (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-600/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+              <article
+                key={service.title}
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-600/30 hover:shadow-lg sm:p-8"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center mb-6 shadow-lg shadow-brand-600/10 group-hover:scale-105 transition-transform">
-                    <Icon className="w-7 h-7 text-white" />
+                  {/* Icon */}
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 shadow-lg shadow-brand-600/10 transition-transform duration-300 group-hover:scale-105">
+                    <Icon aria-hidden="true" className="h-7 w-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">
+
+                  {/* Title */}
+                  <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-brand-600">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+
+                  {/* Description */}
+                  <p className="text-sm leading-relaxed text-slate-600">
                     {service.description}
                   </p>
                 </div>
 
+                {/* CTA */}
                 <a
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-brand-600 hover:text-brand-700 group-hover:translate-x-1 transition-all"
+                  aria-label={`Tanyakan ${service.title} melalui WhatsApp`}
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition-all hover:text-brand-700"
                 >
-                  <span>Tanyakan Layanan Ini &rarr;</span>
+                  <span>Tanyakan Layanan</span>
+
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
                 </a>
-              </div>
+              </article>
             );
           })}
         </div>
-
       </div>
     </section>
   );

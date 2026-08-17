@@ -6,7 +6,7 @@ export default function CTA() {
 
   return (
     <section
-      aria-labelledby="cta-heading"
+      aria-labelledby="hero-heading"
       className="relative overflow-hidden border-y border-slate-200 bg-gradient-to-r from-brand-50 via-white to-brand-50 py-14 sm:py-16"
     >
       {/* Background Accent */}
@@ -16,7 +16,7 @@ export default function CTA() {
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        {/* Badge */}
+        {/* Trust Badge */}
         <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
           <Zap
             aria-hidden="true"
@@ -27,22 +27,22 @@ export default function CTA() {
 
         {/* Main Heading */}
         <h1
-          id="cta-heading"
+          id="hero-heading"
           className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl"
         >
           Toko Aki Mobil & Motor 24 Jam di Cianjur
         </h1>
 
-        {/* Supporting Text */}
+        {/* Description */}
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
           <strong className="font-semibold text-slate-800">
             Butuh aki sekarang?
           </strong>{" "}
-          Cahaya Baru Aki 2 siap membantu kebutuhan aki mobil dan motor Anda,
-          termasuk layanan antar dan pemasangan di Cianjur dan sekitarnya.
+          Cahaya Baru Aki 2 menyediakan aki mobil dan motor dengan layanan antar
+          dan pemasangan untuk wilayah Cianjur dan sekitarnya.
         </p>
 
-        {/* CTA Buttons */}
+        {/* Primary Actions */}
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           {/* WhatsApp */}
           <a
@@ -59,7 +59,7 @@ export default function CTA() {
           {/* Phone */}
           <a
             href="tel:+6281809833193"
-            aria-label="Telepon Cahaya Baru Aki 2 di 0818-0983-3193"
+            aria-label="Telepon Cahaya Baru Aki 2"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-4 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 active:scale-[0.98] sm:w-auto"
           >
             <PhoneCall aria-hidden="true" className="h-5 w-5 text-amber-600" />
@@ -85,9 +85,8 @@ export default function CTA() {
           </div>
         </div>
 
-        {/* Small reassurance */}
         <p className="mt-4 text-xs text-slate-400">
-          Hubungi kami untuk informasi ketersediaan aki dan layanan pemasangan.
+          Hubungi kami untuk cek ketersediaan aki dan layanan pemasangan.
         </p>
       </div>
     </section>

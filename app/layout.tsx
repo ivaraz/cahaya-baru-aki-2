@@ -5,11 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://cahaya-baru-aki-2.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://cahayabaruaki2.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Toko Aki Mobil & Motor di Cianjur | Cahaya Baru Aki 2",
+  verification: {
+    google: "qHY6Ug54s_E7Oop579jSFjLwo5tEsQ1mla8mcEiWguM",
+  },
   description:
     "Toko aki mobil dan motor terpercaya di Cianjur. Melayani penjualan aki GS Astra, Yuasa, Amaron, Motobatt, dan jasa antar-pasang aki 24 jam nonstop di Jln Arwinda No.49 Tajurhalang Cianjur.",
   keywords: [

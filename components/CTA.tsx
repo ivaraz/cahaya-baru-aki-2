@@ -1,8 +1,25 @@
 import { MessageSquare, PhoneCall, Zap, Clock, MapPin } from "lucide-react";
 import { generateWhatsAppLink, getImportantMessage } from "@/lib/whatsapp";
 
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      action: string,
+      params?: Record<string, string>
+    ) => void;
+  }
+}
+
 export default function CTA() {
   const waUrl = generateWhatsAppLink(getImportantMessage());
+  const handlePhoneClick = () => {
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18393022426/erznCKDLn-UcENr_vMJE",
+      });
+    }
+  };
 
   return (
     <section
@@ -59,6 +76,7 @@ export default function CTA() {
           {/* Phone */}
           <a
             href="tel:+6281809833193"
+            onClick={handlePhoneClick}
             aria-label="Telepon Cahaya Baru Aki 2"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-4 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 active:scale-[0.98] sm:w-auto"
           >

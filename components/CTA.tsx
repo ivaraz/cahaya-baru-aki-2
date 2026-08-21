@@ -1,3 +1,4 @@
+"use client"
 import { MessageSquare, PhoneCall, Zap, Clock, MapPin } from "lucide-react";
 import { generateWhatsAppLink, getImportantMessage } from "@/lib/whatsapp";
 
@@ -20,6 +21,13 @@ export default function CTA() {
       });
     }
   };
+  const handleWhatsAppClick = () => {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", "conversion", {
+      send_to: "AW-18393022426/erznCKDLn-UcENr_vMJE",
+    });
+  }
+};
 
   return (
     <section
@@ -64,6 +72,7 @@ export default function CTA() {
           {/* WhatsApp */}
           <a
             href={waUrl}
+            onClick={handleWhatsAppClick}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat WhatsApp Cahaya Baru Aki 2"
